@@ -1,9 +1,9 @@
 def oddOrEven(number):
 	''' takes in a positive integer or zero as a parameter and returns whether the number is odd or even '''
 	if number % 2 == 0:
-		return "even"
+		return True
 	else:
-		return "odd"
+		return False
 
 
 def numberOfDigits(number):
@@ -20,7 +20,7 @@ def sumDigits(number):
 		chr = int(chr)
 		sum += chr
 	return sum
-		
+	
 
 def sum_less_ints(number):
 	''' takes a non-negative integer as a parameter and returns the sum of all the integers that are less than the given number
@@ -36,7 +36,7 @@ def factorial(number):
 	''' takes a non-negative integer as a parameter and returns its factorial '''
 	total = 1
 	if number == 0:
-		return 0
+		return 1
 	else:
 		while number > 0:
 			total = total * number
@@ -48,23 +48,22 @@ def divisibleBy(number1, number2):
 	''' takes two positive integers as parameters and figures out whether the second number is a factor of the first.
 		In other words, returns true if the second number divides into the first number evenly, and false otherwise '''
 	if number1 % number2 == 0:
-		return "divisible"
+		return True
 	else:
-		return "not divisible"
+		return False
 
 
 def primeNumber(number):
 	''' takes a positive integer as a parameter and returns whether the number is a prime '''
 	if number == 0 or number == 1:
-		return "not prime"
+		return False
 	else:
 		for num in range(2, number):
 			if (number % num) == 0:
-				return "not prime"
+				return False
 			else:
-				return "prime"
+				return True
 
-	
 		newNumber = number - 1
 		while newNumber != 1:
 			try: 
@@ -72,9 +71,9 @@ def primeNumber(number):
 			except ValueError:
 				newNumber -= 1
 				if newNumber == 1:
-					return "prime"
+					return True
 			else:
-				return "not prime"
+				return False
 					
 
 def perfectNumber(number):
@@ -92,9 +91,9 @@ def perfectNumber(number):
 	perfectNumbers.append(137438691328)
 	perfectNumbers.append(2305843008139952128)
 	if number in perfectNumbers:
-		return "perfect"
+		return True
 	else:
-		return "not perfect"
+		return False
 	
 	
 def sumDigitsDivisible(number):
@@ -102,8 +101,8 @@ def sumDigitsDivisible(number):
 		calls the sumDigits function to define this function '''
 	sumOfDigits = sumDigits(number)
 	if sumOfDigits == 0:
-		return "not divisible"
+		return False
 	elif number % sumOfDigits != 0:
-		return "not divisible"
+		return False
 	else:
-		return "divisible"
+		return True
